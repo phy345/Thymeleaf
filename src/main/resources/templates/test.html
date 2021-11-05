@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">
+    <title>홈페이지</title>
+</head>
+<body>
+	<!-- 변수 표현식 -->
+	<h1>변수 표현식</h1>
+	
+    <span th:text="${mapList.fruit1}"></span>
+    <span th:text="${mapList.fruit2}"></span>
+    <span th:text="${mapList.fruit3}"></span>
+    
+    <br>
+    <br>
+    
+    <!-- 선택변수 표현식 -->
+    <h1>선택 변수 표현식</h1>
+    
+    <div th:object="${mapList}">
+    	<span th:text="*{fruit1}"></span>
+    	<span th:text="*{fruit2}"></span>
+    	<span th:text="*{fruit3}"></span>
+    </div>
+	
+	<br>
+	<br>
+	    
+    <!-- 메시지 표현식 -->
+    <h1>메시지 표현식</h1>
+    
+    <span th:text=#{mapList.fruit4}></span> <br><br>
+    
+    <!-- 링크 표현식 -->
+    <h1>링크 표현식</h1>
+    
+    <a th:href="@{http://www.naver.com}">naver</span> <br><br>
+    
+    
+</body>
+</html>

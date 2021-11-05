@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">
+    <title>홈페이지</title>
+</head>
+<body>
+    <h1>타임리프 예제 테이블</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="board,iterState : ${list}">
+             	<td><span th:text="${iterState.count}"></span></td>
+	        	<td><span th:text="${board.title}"></span></td>
+	        	<td><span th:text="${board.writer}"></span></td>
+	        	<td><span th:text="${board.content}"></span></td>	         
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <p th:text="${#dates.format(new java.util.Date(), 'yyyy-MM-dd HH:mm')}"></p>
+    <a th:href="@{http://www.naver.com}">네이버링크</a>
+    <a th:href="@{/test}">test</a>
+   
+</body>
+</html>
